@@ -1,33 +1,26 @@
-import { useEffect, useState } from 'react';
+import { useContext } from 'react';
+import { ThemeContext } from '../../App';
 import Sun from "../../assets/sun.svg"
 import Moon from "../../assets/moon.svg"
 
 export const ThemeButton = () => {
-    const [isDark, setIsDark] = useState(false);
+    const { isDark, setIsDark } = useContext(ThemeContext);
 
     function toggleTheme() {
         if (isDark) {
             document.documentElement.classList.remove('dark');
             setIsDark(false);
+            localStorage.setItem("isDarkTheme", false);
         } else {
             document.documentElement.classList.add('dark');
             setIsDark(true);
+            localStorage.setItem("isDarkTheme", true);
         }
     };
 
-    useEffect(() => {
-        const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
-        if (darkThemeMq.matches) {
-            document.documentElement.classList.add('dark');
-            setIsDark(true);
-        } else {
-            document.documentElement.classList.remove('dark');
-            setIsDark(false);
-        }
-    }, []);
     return (
-        <div className='w-max bg-black dark:bg-white p-2 rounded-full fixed top-2 right-2'>
-            <img className='w-[16px] h-[16px]' src={isDark ? Moon : Sun} alt="" onClick={toggleTheme} />
+        <div className='w-max bg-black dark:bg-white p-2 rounded-full fixed top-6 right-6 cursor-pointer' onClick={toggleTheme}>
+            <img className='w-[16px] h-[16px]' src={isDark ? Moon : Sun} alt={isDark ? "Moon" : "Sun"} />
         </div>
     )
 }

@@ -1,16 +1,18 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Eye from "../../assets/eye.svg"
 import EyeClose from "../../assets/eye-off.svg"
 import "./form.css";
+// import { useNavigate } from 'react-router-dom';
 
 export default function Form() {
+    // let navigate = useNavigate();
+
     const [slide, setSlide] = useState(true);
     const [isVisible, setIsVisible] = useState(false);
     const [showPassword, setShowPassword] = useState(false);
 
-    const toggleSlide = () => {
-        setIsVisible(!isVisible);
-    };
+    // navigate("/");
+
     return (
         <div className='startUp max-w-[400px] w-full h-min bg-black dark:bg-white p-5 rounded overflow-hidden'>
             <div className={`w-full mb-4 flex transform transition-transform duration-500 ${isVisible && slide ? '-translate-x-full' : 'translate-x-0'}`}>
