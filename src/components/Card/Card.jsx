@@ -3,7 +3,7 @@ import WhiteBin from "../../assets/bin-white.svg";
 import BlackPen from "../../assets/pen-black.svg";
 import WhitePen from "../../assets/pen-white.svg";
 
-export const Card = ({ title, dark }) => {
+export const Card = ({ id, title, dark }) => {
     return (
         <>
             <div className='bg-black dark:bg-white px-4 py-2 max-w-[300px] w-full rounded shadow-2xl dark:shadow-[0_25px_50px_-12px_rgba(255,255,255,0.3)] '>

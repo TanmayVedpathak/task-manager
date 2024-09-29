@@ -20,7 +20,7 @@ export const ThemeButton = () => {
 
     return (
         <div className='w-max bg-black dark:bg-white p-2 rounded-full fixed top-6 right-6 cursor-pointer' onClick={toggleTheme}>
-            <img className='w-[16px] h-[16px]' src={isDark ? Moon : Sun} alt={isDark ? "Moon" : "Sun"} />
+            <img className='w-[16px] h-[16px]' src={isDark ? Sun : Moon} alt={isDark ? "Sun" : "Moon"} />
         </div>
     )
 }

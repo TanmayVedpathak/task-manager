@@ -10,7 +10,7 @@ export const LoginContext = createContext();
 
 function App() {
   const [isDark, setIsDark] = useState(false);
-  const [isLogin, setLogin] = useState(true);
+  const [isLogin, setLogin] = useState(false);
 
   useEffect(() => {
     const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
